@@ -229,6 +229,9 @@
   .mb-\[24px\] {
     margin-bottom: 24px;
   }
+  .mb-\[32px\] {
+    margin-bottom: 32px;
+  }
   .mb-\[200px\] {
     margin-bottom: 200px;
   }
@@ -250,14 +253,50 @@
   .h-5 {
     height: calc(var(--spacing) * 5);
   }
+  .h-\[0px\] {
+    height: 0px;
+  }
+  .h-\[24px\] {
+    height: 24px;
+  }
+  .h-\[32px\] {
+    height: 32px;
+  }
+  .h-\[44px\] {
+    height: 44px;
+  }
+  .h-\[100px\] {
+    height: 100px;
+  }
+  .h-\[400px\] {
+    height: 400px;
+  }
+  .h-\[440px\] {
+    height: 440px;
+  }
+  .h-\[480px\] {
+    height: 480px;
+  }
+  .h-\[520px\] {
+    height: 520px;
+  }
+  .h-\[800px\] {
+    height: 800px;
+  }
   .h-\[same-height\] {
     height: same-height;
   }
   .h-\[your-fixed-height\] {
     height: your-fixed-height;
   }
+  .h-dvh {
+    height: 100dvh;
+  }
   .h-full {
     height: 100%;
+  }
+  .h-screen {
+    height: 100vh;
   }
   .w-5 {
     width: calc(var(--spacing) * 5);
@@ -321,8 +360,17 @@
   .items-center {
     align-items: center;
   }
+  .items-end {
+    align-items: flex-end;
+  }
   .justify-between {
     justify-content: space-between;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .justify-end {
+    justify-content: flex-end;
   }
   .gap-\[1px\] {
     gap: 1px;
@@ -430,11 +478,20 @@
   .text-\[22px\] {
     font-size: 22px;
   }
+  .text-\[24px\] {
+    font-size: 24px;
+  }
+  .text-\[32px\] {
+    font-size: 32px;
+  }
   .text-\[36px\] {
     font-size: 36px;
   }
   .text-\[48px\] {
     font-size: 48px;
+  }
+  .text-\[64px\] {
+    font-size: 64px;
   }
   .leading-\[22px\] {
     --tw-leading: 22px;
@@ -468,6 +525,9 @@
     --tw-font-weight: 700;
     font-weight: 700;
   }
+  .\[color\:\#4E4E4E\] {
+    color: #4E4E4E;
+  }
   .\[color\:\#010101\] {
     color: #010101;
   }
@@ -485,6 +545,9 @@
   }
   .text-\[\#\] {
     color: #;
+  }
+  .text-\[px\] {
+    color: px;
   }
   .text-white {
     color: var(--color-white);
@@ -779,6 +842,11 @@
   .min-md\:hidden {
     @media (width >= 48rem) {
       display: none;
+    }
+  }
+  .lg\:block {
+    @media (width >= 64rem) {
+      display: block;
     }
   }
   .min-lg\:hidden {
