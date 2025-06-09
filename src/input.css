@@ -1,0 +1,20 @@
+ @import "tailwindcss";
+
+
+ body{
+  max-width: 1440px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+@layer utilities {
+    .custom-font {
+      font-family: "inter", sans-serif;
+    }
+  }
+@layer utilities {
+    .dancing-script {
+        font-family: "Dancing Script", cursive;
+    }
+  }
+
