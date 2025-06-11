@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>North Cafe</title>
+  <link rel="stylesheet" href="output.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+  </style>
+</head>
+<body class="min-h-screen">
+<header class="mx-[64px] py-[32px] flex justify-between items-center max-md:mx-[32px]">
+  <nav>
+    <a href="" class="text-[#B20201] font-[700] text-[36px] leading-[44px] dancing-script max-lg:text-[24px]">North Café</a>
+  </nav>
+  <nav class="flex gap-[24px] items-center text-[16px] custom-font leading-[32px] max-lg:gap-[16px] max-md:hidden">
+    <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">Menu</a>
+    <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">About</a>
+    <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">Careers</a>
+  </nav>
+  <nav class="flex gap-[24px] items-center custom-font leading-[26px]">
+    <div class="md:hidden flex gap-[12px] items-center">
+      <img src="/images/SearchIcon.svg" alt="" class="[color:#010101]" />
+      <button onclick="toggleMenu()">
+        <img src="/images/hamburger.svg" alt="" class="cursor-pointer" />
+      </button>
+    </div>
+    <a href="" class="text-[#B20201] text-[20px] font-[700] max-md:hidden custom-font">Log In</a>
+    <a href="" class="px-[24px] py-[12px] custom-font text-[20px] text-white bg-[#B20201] font-[700] max-md:hidden">Sign Up</a>
+  </nav>
+</header>
+
+<!-- Hamburger Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-50 bg-white hidden">
+  <div class="flex flex-col h-full p-[32px]">
+    <div class="flex justify-end">
+      <button onclick="toggleMenu()" class="cursor-pointer">
+        <img src="/images/close.svg" alt="Close" class="h-[32px]" />
+      </button>
+    </div>
+    <div class="flex flex-col items-center justify-center flex-1 gap-[24px]">
+      <a href="#menu" class="text-[#4E4E4E] text-[20px] font-[500] custom-font hover:font-[700] hover:text-[#010101]">Menu</a>
+      <a href="#about" class="text-[#4E4E4E] text-[20px] font-[500] custom-font hover:font-[700] hover:text-[#010101]">About</a>
+      <a href="#careers" class="text-[#4E4E4E] text-[20px] font-[500] custom-font hover:font-[700] hover:text-[#010101]">Careers</a>
+      <a href="/login" class="text-[#B20201] text-[20px] font-[700] custom-font mt-[32px]">Log In</a>
+      <a href="/signup" class="px-[24px] py-[12px] custom-font text-[20px] text-white bg-[#B20201] font-[700] w-fit">Sign Up</a>
+    </div>
+  </div>
+</div>
+
+<section class="flex items-center justify-center" style="height: calc(100vh - 112px);">
+  <div class="flex flex-col items-center gap-[12px]">
+    <div>
+      <img src="/images/Cart.svg" alt="Empty Cart">
+    </div>
+    <div>
+      <h2 class="inter font-[400] text-[#010101] text-[22px] leading-[32px] text-center mb-[4px]">Your cart is empty</h2>
+      <p class="text-[#4E4E4E] inter font-[400] leading-[26px] text-center">Add items to order.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const isHidden = menu.classList.contains('hidden');
+    menu.classList.toggle('hidden');
+    document.body.style.overflow = isHidden ? 'hidden' : '';
+  }
+</script>
+</body>
+</html>
