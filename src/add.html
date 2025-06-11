@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>North Cafe</title>
+  <link rel="stylesheet" href="output.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+  </style>
+</head>
+<body>
+<header class="mx-[64px] py-[32px] flex justify-between items-center max-md:mx-[32px]">
+        <nav>
+            <a href="" class="text-[#B20201] font-[700] text-[36px] leading-[44px] dancing-script max-lg:text-[24px]">North Café</a>
+        </nav>
+        <nav class="flex gap-[24px] items-center text-[16px] custom-font leading-[32px] max-lg:gap-[16px] max-md:hidden">
+            <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">Menu</a>
+            <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">About</a>
+            <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">Careers</a>
+        </nav>
+        <nav class="flex gap-[24px] items-center custom-font leading-[26px]">
+            <div class="md:hidden flex gap-[12px] items-center">
+                <img src="/images/SearchIcon.svg" alt="" class="[color:#010101]" />
+                <button onclick="toggleMenu()">
+                    <img src="/images/hamburger.svg" alt="" class="cursor-pointer" />
+                </button>
+            </div>
+            <a href="" class="text-[#B20201] text-[20px] font-[700] max-md:hidden custom-font">Log In</a>
+            <a href="" class="px-[24px] py-[12px] custom-font text-[20px] text-white bg-[#B20201] font-[700] max-md:hidden">Sign Up</a>
+        </nav>
+    </header>
+    
+    <!-- Hamburger Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-white hidden">
+        <div class="flex flex-col h-full p-[32px]">
+            <!-- Close Icon -->
+            <div class="flex justify-end">
+                <button onclick="toggleMenu()" class="cursor-pointer">
+                    <img src="/images/close.svg" alt="Close" class="h-[32px]" />
+                </button>
+            </div>
+
+            <!-- Menu Items -->
+            <div class="flex flex-col items-center justify-center flex-1 gap-[24px]">
+                <a href="#menu" class="text-[#4E4E4E] text-[20px] font-[500] custom-font hover:font-[700] hover:text-[#010101]">Menu</a>
+                <a href="#about" class="text-[#4E4E4E] text-[20px] font-[500] custom-font hover:font-[700] hover:text-[#010101]">About</a>
+                <a href="#careers" class="text-[#4E4E4E] text-[20px] font-[500] custom-font hover:font-[700] hover:text-[#010101]">Careers</a>
+
+                <!-- Auth Actions -->
+                <a href="/login" class="text-[#B20201] text-[20px] font-[700] custom-font mt-[32px]">Log In</a>
+                <a href="/signup" class="px-[24px] py-[12px] custom-font text-[20px] text-white bg-[#B20201] font-[700] w-fit">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+
+  <section class="mx-[64px] py-[32px] max-md:mx-[32px]">
+    <div>
+      <img src="/images/foodDefault.png" alt="">
+    </div>
+
+    <div>
+      <div class="flex flex-col gap-[8px]">
+        <h2 class="inter font-[700] text-[36px] leading-[44px] text-[#010101]">Native Rice</h2>
+        <p class="inter font-[400] text-[22px] text-[#4E4E4E] leading-[32px] mb-[28px]">₦4,000</p>
+      </div>
+
+      <form id="portionForm" class="flex flex-col gap-[28px] mt-[8px]">
+        <div class="flex flex-col gap-[4px]">
+          <div id="portions-required-msg"></div>
+          <div class="flex justify-between items-center gap-[16px]">
+            <label class="inter font-[400] text-[22px] text-[#4E4E4E] leading-[32px]">No’ of portions</label>
+            <div class="relative w-max">
+              <select id="numberSelect" class="appearance-none bg-[#F3F3F3] px-[24px] py-[12px] font-[600] inter rounded-[900px] focus:outline-none focus:ring-2 focus:ring-[#B20201] border border-transparent text-[#010101]">
+                <option value="0" selected>0</option>
+              </select>
+              <div class="pointer-events-none absolute top-1/2 right-[16px] transform -translate-y-1/2 flex items-center space-x-[4px]">
+                <span class="text-[#010101]">▼</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-[4px]">
+          <div id="plates-required-msg"></div>
+          <div class="flex justify-between items-center">
+            <label class="inter font-[400] text-[22px] text-[#4E4E4E] leading-[32px]">No’ of plates</label>
+            <div class="relative w-max">
+              <select id="platesSelect" class="appearance-none bg-[#F3F3F3] px-[24px] py-[12px] font-[600] inter rounded-[900px] focus:outline-none focus:ring-2 focus:ring-[#B20201] border border-transparent text-[#010101]">
+                <option value="0" selected>0</option>
+              </select>
+              <div class="pointer-events-none absolute top-1/2 right-[16px] transform -translate-y-1/2 flex items-center space-x-[4px]">
+                <span class="text-[#010101]">▼</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-[4px]">
+          <div id="ppp-required-msg"></div>
+          <div class="flex justify-between items-center gap-[16px]">
+            <label for="portionsPerPlateSelect" class="inter font-[400] text-[22px] text-[#4E4E4E] leading-[32px]">Portions per plate</label>
+            <div class="relative w-max">
+              <select id="portionsPerPlateSelect" class="appearance-none bg-[#F3F3F3] px-[24px] py-[12px] font-[600] inter rounded-[900px] focus:outline-none focus:ring-2 focus:ring-[#B20201] border border-transparent text-[#010101]">
+                <option value="0" selected>0</option>
+              </select>
+              <div class="pointer-events-none absolute top-1/2 right-[16px] transform -translate-y-1/2 flex items-center space-x-[4px]">
+                <span class="text-[#010101]">▼</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-[24px]">
+          <button type="submit" class="bg-[#B20201] text-white px-[32px] py-[12px] rounded-[900px] font-[600] inter text-[18px] hover:bg-[#A10001] transition duration-300">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const isHidden = menu.classList.contains('hidden');
+    menu.classList.toggle('hidden');
+    document.body.style.overflow = isHidden ? 'hidden' : '';
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const select = document.getElementById('numberSelect');
+    const platesSelect = document.getElementById('platesSelect');
+    const portionsPerPlateSelect = document.getElementById('portionsPerPlateSelect');
+    const portionsMsgDiv = document.getElementById('portions-required-msg');
+    const platesMsgDiv = document.getElementById('plates-required-msg');
+    const pppMsgDiv = document.getElementById('ppp-required-msg');
+    const form = document.getElementById('portionForm');
+
+    for (let i = 1; i <= 1000; i++) {
+      select.add(new Option(i, i));
+      platesSelect.add(new Option(i, i));
+      portionsPerPlateSelect.add(new Option(i, i));
+    }
+
+    form.addEventListener('submit', (e) => {
+      let hasError = false;
+      portionsMsgDiv.innerHTML = '';
+      platesMsgDiv.innerHTML = '';
+      pppMsgDiv.innerHTML = '';
+
+      if (select.value === "0") {
+        hasError = true;
+        portionsMsgDiv.innerHTML = `
+          <div class="text-[#B20201] text-[16px] leading-[32px] py-[8px] px-[20px] bg-[#FFF0EE] w-fit rounded-[900px] font-[500] font-medium">
+            Required!
+          </div>`;
+      }
+
+      if (platesSelect.value === "0") {
+        hasError = true;
+        platesMsgDiv.innerHTML = `
+          <div class="text-[#B20201] text-[16px] leading-[32px] py-[8px] px-[20px] bg-[#FFF0EE] w-fit rounded-[900px] font-[500] font-medium">
+            Required!
+          </div>`;
+      }
+
+      if (portionsPerPlateSelect.value === "0") {
+        hasError = true;
+        pppMsgDiv.innerHTML = `
+          <div class="text-[#B20201] text-[16px] leading-[32px] py-[8px] px-[20px] bg-[#FFF0EE] w-fit rounded-[900px] font-[500] font-medium">
+            Required!
+          </div>`;
+      }
+
+      if (hasError) e.preventDefault();
+    });
+
+    [select, platesSelect, portionsPerPlateSelect].forEach(el => {
+      el.addEventListener('change', () => {
+        if (select.value !== "0") portionsMsgDiv.innerHTML = '';
+        if (platesSelect.value !== "0") platesMsgDiv.innerHTML = '';
+        if (portionsPerPlateSelect.value !== "0") pppMsgDiv.innerHTML = '';
+      });
+    });
+  });
+</script>
+</body>
+</html>
