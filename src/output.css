@@ -181,14 +181,8 @@
   .top-1\/2 {
     top: calc(1/2 * 100%);
   }
-  .right-4 {
-    right: calc(var(--spacing) * 4);
-  }
   .right-\[16px\] {
     right: 16px;
-  }
-  .bottom-4 {
-    bottom: calc(var(--spacing) * 4);
   }
   .bottom-8 {
     bottom: calc(var(--spacing) * 8);
