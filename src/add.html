@@ -58,17 +58,17 @@
 
     <div class="flex-1 min-w-0">
       <div class="flex flex-col gap-[8px]">
-        <h2 class="inter font-[700] text-[36px] leading-[44px] text-[#010101] max-sm:text-[32px]">Native Rice</h2>
-        <p class="inter font-[400] text-[22px] text-[#4E4E4E] leading-[32px] mb-[28px]">₦4,000</p>
+        <h2 class="custom-font font-[700] text-[36px] leading-[44px] text-[#010101] max-sm:text-[32px]">Native Rice</h2>
+        <p class="custom-font font-[400] text-[22px] text-[#4E4E4E] leading-[32px] mb-[28px]">₦4,000</p>
       </div>
 
       <form id="portionForm" class="flex flex-col gap-[28px] mt-[8px] w-full" onsubmit="return handleSubmit(event)">
         <div class="flex flex-col gap-[4px] w-full">
           <div id="portions-required-msg"></div>
           <div class="flex justify-between items-center gap-[16px] w-full">
-            <label class="inter font-[400] text-[22px] text-[#4E4E4E] leading-[32px] max-sm:text-[20px] flex-shrink-0">No' of portions</label>
+            <label class="custom-font font-[400] text-[22px] text-[#4E4E4E] leading-[32px] max-sm:text-[20px] flex-shrink-0">No' of portions</label>
             <div class="relative">
-              <select id="numberSelect" class="appearance-none bg-[#F3F3F3] px-[24px] py-[12px] font-[600] inter rounded-[900px] focus:outline-none text-[#010101] w-full">
+              <select id="numberSelect" class="appearance-none bg-[#F3F3F3] px-[24px] py-[12px] font-[600] custom-font rounded-[900px] focus:outline-none text-[#010101] w-full">
                 <option value="0" selected>Select portions</option>
               </select>
               <div class="pointer-events-none absolute top-1/2 right-[16px] transform -translate-y-1/2 flex items-center space-x-[4px]">
@@ -81,9 +81,9 @@
         <div class="flex flex-col gap-[4px] w-full">
           <div id="plates-required-msg"></div>
           <div class="flex justify-between items-center w-full">
-            <label class="inter font-[400] text-[22px] text-[#4E4E4E] leading-[32px] max-sm:text-[20px] flex-shrink-0">No' of plates</label>
+            <label class="custom-font font-[400] text-[22px] text-[#4E4E4E] leading-[32px] max-sm:text-[20px] flex-shrink-0">No' of plates</label>
             <div class="relative">
-              <select id="platesSelect" class="appearance-none bg-[#F3F3F3] px-[24px] py-[12px] font-[600] inter rounded-[900px] focus:outline-none text-[#010101] w-full">
+              <select id="platesSelect" class="appearance-none bg-[#F3F3F3] px-[24px] py-[12px] font-[600] custom-font rounded-[900px] focus:outline-none text-[#010101] w-full">
                 <option value="0" selected>Select plates</option>
               </select>
               <div class="pointer-events-none absolute top-1/2 right-[16px] transform -translate-y-1/2 flex items-center space-x-[4px]">
@@ -96,9 +96,9 @@
         <div class="flex flex-col gap-[4px] w-full">
           <div id="ppp-required-msg"></div>
           <div class="flex justify-between items-center gap-[16px] w-full">
-            <label for="portionsPerPlateSelect" class="inter font-[400] text-[22px] text-[#4E4E4E] leading-[32px] max-sm:text-[20px] flex-shrink-0">Portions per plate</label>
+            <label for="portionsPerPlateSelect" class="custom-font font-[400] text-[22px] text-[#4E4E4E] leading-[32px] max-sm:text-[20px] flex-shrink-0">Portions per plate</label>
             <div class="relative">
-              <select id="portionsPerPlateSelect" class="appearance-none bg-[#F3F3F3] px-[24px] py-[12px] font-[600] inter rounded-[900px] focus:outline-none text-[#010101] w-full">
+              <select id="portionsPerPlateSelect" class="appearance-none bg-[#F3F3F3] px-[24px] py-[12px] font-[600] custom-font rounded-[900px] focus:outline-none text-[#010101] w-full">
                 <option value="0" selected>Select portions per plate</option>
               </select>
               <div class="pointer-events-none absolute top-1/2 right-[16px] transform -translate-y-1/2 flex items-center space-x-[4px]">
@@ -109,7 +109,7 @@
         </div>
 
         <div class="flex flex-col gap-[12px] mt-[24px] w-full">
-          <label class="inter font-[400] text-[22px] text-[#4E4E4E] leading-[32px] max-sm:text-[20px]">Special Instructions</label>
+          <label class="custom-font font-[400] text-[22px] text-[#4E4E4E] leading-[32px] max-sm:text-[20px]">Special Instructions</label>
           <textarea
             placeholder="Add any special instructions for this order, or leave blank if there's nothing to add."
             class="border-[1px] border-[#D1D1D1] rounded-[12px] h-[240px] py-[12px] px-[20px] text-left align-top focus:outline-none text-[#010101] w-full resize-none"
@@ -117,8 +117,8 @@
         </div>
 
         <div class="flex justify-between items-center mt-[32px] w-full">
-          <label class="inter font-[600] text-[22px] text-[#4E4E4E] leading-[32px] max-sm:text-[20px]">Total:</label>
-          <p class="inter font-[900] text-[22px] text-[#010101] leading-[32px] max-sm:text-[20px]">₦40,000</p>
+          <label class="custom-font font-[600] text-[22px] text-[#4E4E4E] leading-[32px] max-sm:text-[20px]">Total:</label>
+          <p class="custom-font font-[900] text-[22px] text-[#010101] leading-[32px] max-sm:text-[20px]">₦40,000</p>
         </div>
 
         <button type="submit" class="px-[24px] py-[12px] custom-font text-[20px] text-white w-full bg-[#B20201] font-[700] mt-[32px]">Add to cart</button>
@@ -128,7 +128,7 @@
 </section>
 
 <section class="mx-[64px] py-[32px] max-md:mx-[32px] mt-[88px] mb-[200px]">
-  <h2 class="inter font-[700] text-[28px] leading-[36px] text-[#010101] mb-[32px]">Popular Pairings</h2>
+  <h2 class="custom-font font-[700] text-[28px] leading-[36px] text-[#010101] mb-[32px]">Popular Pairings</h2>
   <div class="grid grid-cols-3 gap-[32px] max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
     <!-- Pairing Item 1 -->
     <a href="">
@@ -233,7 +233,7 @@
     portionsMsg.className = platesMsg.className = pppMsg.className = '';
 
     let isValid = true;
-    const errorClass = 'text-[#B20201] text-[14px] mb-[8px] font-[500] inter';
+    const errorClass = 'text-[#B20201] text-[14px] mb-[8px] font-[500] custom-font';
 
     if (portions === "0") {
       portionsMsg.textContent = 'Please select number of portions';
