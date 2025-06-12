@@ -14,9 +14,15 @@
   }
 @layer utilities {
     .dancing-script {
-        font-family: "Dancing Script", cursive;
+      font-family: "Dancing Script", cursive;
     }
   }
+  @layer utilities {
+    .satisfy {
+      font-family: "Satisfy", cursive;
+    }
+  }
+
 
 /* Show ONLY the mute/unmute button */
 video::-webkit-media-controls {

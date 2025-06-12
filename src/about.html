@@ -2,91 +2,191 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>North Cafe - About</title>
   <link rel="stylesheet" href="output.css" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
   </style>
 </head>
 <body>
+<!-- Header -->
 <header class="mx-[64px] py-[32px] flex justify-between items-center max-md:mx-[32px]">
   <nav>
-    <a href="" class="text-[#B20201] font-[700] text-[36px] leading-[44px] dancing-script max-lg:text-[24px]">North Café</a>
+    <a href="#" class="text-[#B20201] font-[700] text-[36px] leading-[44px] dancing-script max-lg:text-[24px]">North Café</a>
   </nav>
   <nav class="flex gap-[24px] items-center text-[16px] custom-font leading-[32px] max-lg:gap-[16px] max-md:hidden">
-    <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">Menu</a>
-    <a href="" class="text-[#010101] custom-font font-[700]">About</a>
-    <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">Careers</a>
+    <a href="#" class="text-[#4E4E4E] hover:text-[#010101] hover:font-[700]">Menu</a>
+    <a href="#" class="text-[#4E4E4E] hover:text-[#010101] hover:font-[700]">About</a>
+    <a href="#" class="text-[#4E4E4E] hover:text-[#010101] hover:font-[700]">Careers</a>
   </nav>
-  <nav class="flex gap-[24px] items-center custom-font leading-[26px]">
+  <nav class="flex gap-[24px] items-center leading-[26px]">
     <div class="md:hidden flex gap-[12px] items-center">
-      <img src="/images/SearchIcon.svg" alt="" class="[color:#010101]" />
+      <img src="/images/SearchIcon.svg" alt="Search" />
       <button onclick="toggleMenu()">
-        <img src="/images/hamburger.svg" alt="" class="cursor-pointer" />
+        <img src="/images/hamburger.svg" alt="Menu" />
       </button>
     </div>
-    <a href="" class="text-[#B20201] text-[20px] font-[700] max-md:hidden custom-font">Log In</a>
-    <a href="" class="px-[24px] py-[12px] custom-font text-[20px] text-white bg-[#B20201] font-[700] max-md:hidden">Sign Up</a>
+    <a href="#" class="text-[#B20201] text-[20px] font-[700] max-md:hidden">Log In</a>
+    <a href="#" class="px-[24px] py-[12px] text-[20px] text-white bg-[#B20201] font-[700] max-md:hidden">Sign Up</a>
   </nav>
 </header>
 
-<!-- Hamburger Menu Overlay -->
+<!-- Mobile Menu -->
 <div id="mobile-menu" class="fixed inset-0 z-50 bg-white hidden">
   <div class="flex flex-col h-full p-[32px]">
     <div class="flex justify-end">
-      <button onclick="toggleMenu()" class="cursor-pointer">
+      <button onclick="toggleMenu()">
         <img src="/images/close.svg" alt="Close" class="h-[32px]" />
       </button>
     </div>
     <div class="flex flex-col items-center justify-center flex-1 gap-[24px]">
-      <a href="#menu" class="text-[#4E4E4E] text-[20px] font-[500] custom-font hover:font-[700] hover:text-[#010101]">Menu</a>
-      <a href="#about" class="text-[#4E4E4E] text-[20px] font-[500] custom-font hover:font-[700] hover:text-[#010101]">About</a>
-      <a href="#careers" class="text-[#4E4E4E] text-[20px] font-[500] custom-font hover:font-[700] hover:text-[#010101]">Careers</a>
-      <a href="/login" class="text-[#B20201] text-[20px] font-[700] custom-font mt-[32px]">Log In</a>
-      <a href="/signup" class="px-[24px] py-[12px] custom-font text-[20px] text-white bg-[#B20201] font-[700] w-fit">Sign Up</a>
+      <a href="#" class="text-[#4E4E4E] text-[20px] font-[500] hover:font-[700] hover:text-[#010101]">Menu</a>
+      <a href="#" class="text-[#4E4E4E] text-[20px] font-[500] hover:font-[700] hover:text-[#010101]">About</a>
+      <a href="#" class="text-[#4E4E4E] text-[20px] font-[500] hover:font-[700] hover:text-[#010101]">Careers</a>
+      <a href="#" class="text-[#B20201] text-[20px] font-[700] mt-[32px]">Log In</a>
+      <a href="#" class="px-[24px] py-[12px] text-[20px] text-white bg-[#B20201] font-[700] w-fit">Sign Up</a>
     </div>
   </div>
 </div>
 
-<div class="relative w-full mx-auto shadow-md overflow-hidden">
-  <video
-    id="myVideo"
-    src="/videos/videoplayback.mp4"
-    autoplay
-    muted
-    loop
-    playsinline
-    class="w-full h-auto"
-  >
-    Your browser does not support the video tag.
-  </video>
+<!-- Video Section -->
+<section>
+  <h1 class="text-[#010101] text-[48px] my-[32px] text-center font-custom-font max-sm:text-[40px] max-sm:my-[28px]">About</h1>
+  <div class="relative w-full mx-auto shadow-md overflow-hidden">
+    <video id="myVideo" src="/videos/videoplayback.mp4" autoplay muted playsinline loop class="w-full h-auto cursor-pointer">
+      Your browser does not support the video tag.
+    </video>
+    <div id="unmutePrompt" class="hidden absolute bottom-[80px] left-[32px] text-white bg-black bg-opacity-60 px-4 py-2 rounded-md text-sm max-md:left-[16px] max-md:bottom-[64px] cursor-pointer">
+      Tap to unmute
+    </div>
+    <button id="muteButton" class="absolute left-[32px] bottom-[32px] bg-none p-2 rounded-full max-lg:left-[16px] max-lg:bottom-[16px] max-md:w-[36px]">
+      <img src="/images/mute.svg" alt="Muted" id="muteIcon" class="w-full h-full" />
+    </button>
+  </div>
+</section>
 
-  <!-- Custom mute/unmute button -->
-  <button
-    id="muteButton"
-    class="absolute left-[32px] bottom-[32px] bg-white text-black p-2 rounded-full shadow-lg"
-  >
-    🔇
-  </button>
-</div>
+<!-- Image Slideshow Section -->
+<section class="mx-[64px] py-[32px] max-md:mx-[32px]">
+  <h2 class="mt-[88px] font-[400] text-[48px] leading-[56px] text-center satisfy text-[#010101] mb-[64px] max-sm:text-[36px] max-sm:leading-[44px]">
+    The Story Behind Every Meal.
+  </h2>
+  <div class="flex items-center justify-center gap-[24px] max-sm:gap-[16px]">
+    <button id="prevBtn">
+      <img id="leftArrow" src="/images/Left.svg" alt="Left Arrow" class="w-[40px] h-[40px] cursor-pointer" />
+    </button>
+    <img
+      id="foodImage"
+      src="/images/Frame52.png"
+      alt="Food"
+      class="mx-auto w-full h-auto object-cover rounded-md transition-all duration-300"
+    />
+    <button id="nextBtn">
+      <img id="rightArrow" src="/images/Right.svg" alt="Right Arrow" class="w-[40px] h-[40px] cursor-pointer" />
+    </button>
+  </div>
+</section>
 
+<!-- JavaScript -->
 <script>
-  function toggleMenu() {
-    const menu = document.getElementById('mobile-menu');
-    const isHidden = menu.classList.contains('hidden');
-    menu.classList.toggle('hidden');
-    document.body.style.overflow = isHidden ? 'hidden' : '';
-  }
-
+  // Video Logic
   const video = document.getElementById('myVideo');
   const muteButton = document.getElementById('muteButton');
+  const muteIcon = document.getElementById('muteIcon');
+  const unmutePrompt = document.getElementById('unmutePrompt');
 
+  // Ensure video starts muted and attempts autoplay
+  video.muted = true;
+  video.play().catch(() => {
+    console.log('Autoplay failed');
+  });
+
+  // Show the "Tap to unmute" prompt briefly on page load
+  window.addEventListener('DOMContentLoaded', () => {
+    if (unmutePrompt) {
+      unmutePrompt.style.display = 'block';
+      setTimeout(() => {
+        unmutePrompt.style.display = 'none';
+      }, 5000);
+    }
+  });
+
+  // Update mute/unmute icon and prompt visibility
+  function updateMuteUI(isMuted) {
+    muteIcon.src = isMuted ? '/images/mute.svg' : '/images/unmute.svg';
+    muteIcon.alt = isMuted ? 'Muted' : 'Unmuted';
+    if (!isMuted && unmutePrompt) {
+      unmutePrompt.style.display = 'none';
+    }
+  }
+
+  // Toggle mute on video click
+  video.addEventListener('click', () => {
+    video.muted = !video.muted;
+    updateMuteUI(video.muted);
+  });
+
+  // Toggle mute via button
   muteButton.addEventListener('click', () => {
     video.muted = !video.muted;
-    muteButton.textContent = video.muted ? '🔇' : '🔊';
+    updateMuteUI(video.muted);
   });
+
+  // Tap to unmute from prompt
+  unmutePrompt.addEventListener('click', () => {
+    video.muted = false;
+    updateMuteUI(false);
+  });
+
+  // Slideshow Logic
+  const images = [
+    "/images/Frame52.png",
+    "/images/MuteIcon.png",
+    "/images/Frame52.png",
+    "/images/MuteIcon.png",
+  ];
+
+  const foodImage = document.getElementById("foodImage");
+  const leftArrow = document.getElementById("leftArrow");
+  const rightArrow = document.getElementById("rightArrow");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  let currentIndex = 0;
+
+  function updateSlideshow() {
+    foodImage.src = images[currentIndex];
+
+    if (currentIndex === 0) {
+      leftArrow.src = "/images/Left.svg";
+      rightArrow.src = "/images/Right.svg";
+    } else if (currentIndex === images.length - 1) {
+      leftArrow.src = "/images/DarkLeft.svg";
+      rightArrow.src = "/images/LightRight.svg";
+    } else {
+      leftArrow.src = "/images/DarkLeft.svg";
+      rightArrow.src = "/images/Right.svg";
+    }
+  }
+
+  prevBtn.addEventListener("click", () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSlideshow();
+    }
+  });
+
+  nextBtn.addEventListener("click", () => {
+    if (currentIndex < images.length - 1) {
+      currentIndex++;
+      updateSlideshow();
+    }
+  });
+
+  updateSlideshow();
 </script>
+
 </body>
-</html> 
+</html>
