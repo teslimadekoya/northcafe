@@ -11,26 +11,30 @@
   </style>
 </head>
 <body class="min-h-screen">
-<header class="mx-[64px] py-[32px] flex justify-between items-center max-md:mx-[32px]">
-  <nav>
-    <a href="" class="text-[#B20201] font-[700] text-[36px] leading-[44px] dancing-script max-lg:text-[24px]">North Café</a>
-  </nav>
-  <nav class="flex gap-[24px] items-center text-[16px] custom-font leading-[32px] max-lg:gap-[16px] max-md:hidden">
-    <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">Menu</a>
-    <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">About</a>
-    <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">Careers</a>
-  </nav>
-  <nav class="flex gap-[24px] items-center custom-font leading-[26px]">
-    <div class="md:hidden flex gap-[12px] items-center">
-      <img src="/images/SearchIcon.svg" alt="" class="[color:#010101]" />
-      <button onclick="toggleMenu()">
-        <img src="/images/hamburger.svg" alt="" class="cursor-pointer" />
-      </button>
-    </div>
-    <a href="" class="text-[#B20201] text-[20px] font-[700] max-md:hidden custom-font">Log In</a>
-    <a href="" class="px-[24px] py-[12px] custom-font text-[20px] text-white bg-[#B20201] font-[700] max-md:hidden">Sign Up</a>
-  </nav>
+<header class="fixed top-0 left-0 w-full z-50 bg-white">
+  <div class="mx-[64px] py-[32px] flex justify-between items-center max-md:mx-[32px]">
+    <nav>
+      <a href="" class="text-[#B20201] font-[700] text-[36px] leading-[44px] dancing-script max-lg:text-[24px]">North Café</a>
+    </nav>
+    <nav class="flex gap-[24px] items-center text-[16px] custom-font leading-[32px] max-lg:gap-[16px] max-md:hidden">
+      <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">Menu</a>
+      <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">About</a>
+      <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">Careers</a>
+    </nav>
+    <nav class="flex gap-[24px] items-center custom-font leading-[26px]">
+      <div class="md:hidden flex gap-[12px] items-center">
+        <img src="/images/SearchIcon.svg" alt="" class="[color:#010101]" />
+        <button onclick="toggleMenu()">
+          <img src="/images/hamburger.svg" alt="" class="cursor-pointer" />
+        </button>
+      </div>
+      <a href="" class="text-[#B20201] text-[20px] font-[700] max-md:hidden custom-font">Log In</a>
+      <a href="" class="px-[24px] py-[12px] custom-font text-[20px] text-white bg-[#B20201] font-[700] max-md:hidden">Sign Up</a>
+    </nav>
+  </div>
 </header>
+
+
 
 <!-- Hamburger Menu Overlay -->
 <div id="mobile-menu" class="fixed inset-0 z-50 bg-white hidden">
@@ -50,17 +54,16 @@
   </div>
 </div>
 
-<section class="flex items-center justify-center" style="height: calc(100vh - 112px);">
-  <div class="flex flex-col items-center gap-[12px]">
-    <div>
-      <img src="/images/Cart.svg" alt="Empty Cart">
-    </div>
-    <div>
-      <h2 class="custom-font font-[400] text-[#010101] text-[22px] leading-[32px] text-center mb-[4px]">Your cart is empty</h2>
-      <p class="text-[#4E4E4E] custom-font font-[400] leading-[26px] text-center">Add items to order.</p>
-    </div>
+<section class="flex items-center justify-center text-center w-full pt-[112px] min-h-screen">
+  <div class="flex flex-col items-center justify-center gap-[12px]">
+    <img src="/images/Cart.svg" alt="Empty Cart" class="w-[96px] h-[96px]" />
+    <h2 class="custom-font font-[400] text-[#010101] text-[22px] leading-[32px]">Your cart is empty</h2>
+    <p class="text-[#4E4E4E] custom-font font-[400] leading-[26px]">Add items to order.</p>
   </div>
 </section>
+
+
+
 
 <script>
   function toggleMenu() {

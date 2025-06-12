@@ -13,26 +13,27 @@
 </head>
 <body>
 <!-- Header -->
-<header class="mx-[64px] py-[32px] flex justify-between items-center max-md:mx-[32px]">
+<header class="fixed top-0 left-0 right-0 z-50 bg-white px-[64px] py-[32px] flex justify-between items-center max-md:px-[32px]">
   <nav>
-    <a href="#" class="text-[#B20201] font-[700] text-[36px] leading-[44px] dancing-script max-lg:text-[24px]">North Café</a>
+    <a href="" class="text-[#B20201] font-[700] text-[36px] leading-[44px] dancing-script max-lg:text-[24px]">North Café</a>
   </nav>
   <nav class="flex gap-[24px] items-center text-[16px] custom-font leading-[32px] max-lg:gap-[16px] max-md:hidden">
-    <a href="#" class="text-[#4E4E4E] hover:text-[#010101] hover:font-[700]">Menu</a>
-    <a href="#" class="text-[#4E4E4E] hover:text-[#010101] hover:font-[700]">About</a>
-    <a href="#" class="text-[#4E4E4E] hover:text-[#010101] hover:font-[700]">Careers</a>
+    <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">Menu</a>
+    <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">About</a>
+    <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">Careers</a>
   </nav>
-  <nav class="flex gap-[24px] items-center leading-[26px]">
+  <nav class="flex gap-[24px] items-center custom-font leading-[26px]">
     <div class="md:hidden flex gap-[12px] items-center">
-      <img src="/images/SearchIcon.svg" alt="Search" />
+      <img src="/images/SearchIcon.svg" alt="" class="[color:#010101]" />
       <button onclick="toggleMenu()">
-        <img src="/images/hamburger.svg" alt="Menu" />
+        <img src="/images/hamburger.svg" alt="" class="cursor-pointer" />
       </button>
     </div>
-    <a href="#" class="text-[#B20201] text-[20px] font-[700] max-md:hidden">Log In</a>
-    <a href="#" class="px-[24px] py-[12px] text-[20px] text-white bg-[#B20201] font-[700] max-md:hidden">Sign Up</a>
+    <a href="" class="text-[#B20201] text-[20px] font-[700] max-md:hidden custom-font">Log In</a>
+    <a href="" class="px-[24px] py-[12px] custom-font text-[20px] text-white bg-[#B20201] font-[700] max-md:hidden">Sign Up</a>
   </nav>
 </header>
+
 
 <!-- Mobile Menu -->
 <div id="mobile-menu" class="fixed inset-0 z-50 bg-white hidden">
@@ -53,8 +54,8 @@
 </div>
 
 <!-- Video Section -->
-<section>
-  <h1 class="text-[#010101] text-[48px] my-[32px] text-center font-[400] custom-font max-sm:text-[40px] max-sm:my-[28px]">About</h1>
+<section >
+  <h1 class="text-[#010101] text-[48px] my-[32px] text-center font-[400] custom-font max-sm:text-[40px] max-sm:my-[28px] pt-[128px] max-md:pt-[96px]">About</h1>
   <div class="relative w-full mx-auto shadow-md overflow-hidden">
     <video id="myVideo" src="/videos/videoplayback.mp4" autoplay muted playsinline loop class="w-full h-auto cursor-pointer">
       Your browser does not support the video tag.
