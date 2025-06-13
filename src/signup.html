@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up – North Café</title>
+  <link rel="stylesheet" href="output.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Dancing+Script:wght@700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .dancing-script {
+      font-family: 'Dancing Script', cursive;
+    }
+  </style>
+</head>
+<body class="bg-white text-[#010101]">
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white px-[64px] py-[32px] flex justify-between items-center max-md:px-[32px]">
+    <nav>
+      <a href="/" class="text-[#B20201] font-[700] text-[36px] leading-[44px] dancing-script max-lg:text-[24px]">North Café</a>
+    </nav>
+    <nav class="flex gap-[24px] items-center text-[16px] custom-font leading-[32px] max-lg:gap-[16px] max-md:hidden">
+      <a href="index.html" class="text-[#4E4E4E] hover:text-[#010101] hover:font-[700]">Menu</a>
+      <a href="about.html" class="text-[#4E4E4E] hover:text-[#010101] hover:font-[700]">About</a>
+      <a href="#" class="text-[#4E4E4E] hover:text-[#010101] hover:font-[700]">Careers</a>
+    </nav>
+    <nav class="flex gap-[24px] items-center custom-font leading-[26px]">
+      <div class="md:hidden flex gap-[12px] items-center">
+        <img src="/images/SearchIcon.svg" alt="Search" />
+        <button onclick="toggleMenu()">
+          <img src="/images/hamburger.svg" alt="Menu" class="cursor-pointer" />
+        </button>
+      </div>
+      <a href="login.html" class="text-[#B20201] text-[20px] font-[700] max-md:hidden">Log In</a>
+      <a href="/signup" class="px-[24px] py-[12px] text-[20px] text-white bg-[#B20201] font-[700] max-md:hidden">Sign Up</a>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed inset-0 z-50 bg-white hidden">
+    <div class="flex flex-col h-full p-[32px]">
+      <div class="flex justify-end">
+        <button onclick="toggleMenu()" class="cursor-pointer">
+          <img src="/images/close.svg" alt="Close" class="h-[32px]" />
+        </button>
+      </div>
+      <div class="flex flex-col items-center justify-center flex-1 gap-[24px]">
+        <a href="index.html" class="text-[#4E4E4E] text-[20px] font-[500] hover:font-[700] hover:text-[#010101]">Menu</a>
+        <a href="about.html" class="text-[#4E4E4E] text-[20px] font-[500] hover:font-[700] hover:text-[#010101]">About</a>
+        <a href="#" class="text-[#4E4E4E] text-[20px] font-[500] hover:font-[700] hover:text-[#010101]">Careers</a>
+        <a href="login.html" class="text-[#B20201] text-[20px] font-[700] mt-[32px]">Log In</a>
+        <a href="/signup" class="px-[24px] py-[12px] text-[20px] text-white bg-[#B20201] font-[700] w-fit">Sign Up</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signup Form -->
+  <main class="pt-[160px] pb-[80px] flex flex-col items-center justify-center px-4">
+    <h1 class="text-[28px] leading-[36px] font-normal text-center mb-[32px]">Welcome to North Café!</h1>
+
+    <div class="w-full max-w-md">
+      <!-- Username -->
+      <div class="mb-4">
+        <label for="username" class="block text-[16px] mb-1">Username</label>
+        <input type="text" id="username" placeholder="Username"
+          class="w-full px-[16px] py-[12px] border border-[#D1D1D1] rounded-[10px] placeholder-[#4E4E4E] focus:outline-none focus:ring-2 focus:ring-[#B20201]" />
+        <p id="username-error" class="text-red-500 text-sm mt-1 hidden">Username is required</p>
+      </div>
+
+      <!-- Email -->
+      <div class="mb-4">
+        <label for="email" class="block text-[16px] mb-1">Email Address</label>
+        <input type="email" id="email" placeholder="Email Address"
+          class="w-full px-[16px] py-[12px] border border-[#D1D1D1] rounded-[10px] placeholder-[#4E4E4E] focus:outline-none focus:ring-2 focus:ring-[#B20201]" />
+        <p id="email-error" class="text-red-500 text-sm mt-1 hidden">Email is required</p>
+      </div>
+
+      <!-- Password -->
+      <div class="mb-4">
+        <label for="password" class="block text-[16px] mb-1">Password</label>
+        <div class="relative">
+          <input type="password" id="password" placeholder="Password"
+            class="w-full px-[16px] py-[12px] border border-[#D1D1D1] rounded-[10px] placeholder-[#4E4E4E] focus:outline-none focus:ring-2 focus:ring-[#B20201]" />
+          <button type="button" onclick="togglePassword()" class="absolute right-[16px] top-[50%] -translate-y-1/2">
+            <img id="toggleIcon" src="/images/See.svg" alt="Show Password" class="w-[20px] h-[20px]" />
+          </button>
+        </div>
+        <p id="password-error" class="text-red-500 text-sm mt-1 hidden">Password is required</p>
+      </div>
+
+      <!-- Sign Up Button -->
+      <button id="signup-btn" type="button"
+        class="w-full bg-[#B20201] text-white font-[700] text-[18px] py-[12px] mt-2">Sign Up</button>
+
+      <!-- Already have an account -->
+      <div class="text-center mt-[24px] mb-[28px] text-[16px]">
+        <span>Already have an account?</span>
+        <a href="login.html" class="text-[#B20201] font-[700] ml-1">Log In</a>
+      </div>
+
+      <!-- OR Separator -->
+      <div class="flex items-center justify-center mb-6">
+        <div class="flex-1 h-[1px] bg-[#D1D1D1]"></div>
+        <span class="mx-4 text-[#4E4E4E]">OR</span>
+        <div class="flex-1 h-[1px] bg-[#D1D1D1]"></div>
+      </div>
+
+      <!-- Google Sign Up -->
+      <button
+        class="w-full flex items-center justify-center gap-2 border border-[#D1D1D1] py-[12px] rounded-[10px] text-[16px] font-medium">
+        <img src="/images/GoogleLogo.svg" alt="Google" class="w-[20px] h-[20px]" />
+        Continue with Google
+      </button>
+
+      <!-- Terms -->
+      <div class="text-center text-sm text-[#B20201] mt-8">
+        <a href="#" class="underline">Privacy Policy</a>
+        <span>&nbsp;&amp;&nbsp;</span>
+        <a href="#" class="underline">Terms and Conditions</a>
+      </div>
+    </div>
+  </main>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const isHidden = menu.classList.contains('hidden');
+    menu.classList.toggle('hidden');
+    document.body.style.overflow = isHidden ? 'hidden' : '';
+  }
+
+  function togglePassword() {
+    const passwordInput = document.getElementById("password");
+    const toggleIcon = document.getElementById("toggleIcon");
+    const isPassword = passwordInput.type === "password";
+
+    passwordInput.type = isPassword ? "text" : "password";
+    toggleIcon.src = isPassword ? "/images/Hide.svg" : "/images/See.svg";
+    toggleIcon.alt = isPassword ? "Hide Password" : "Show Password";
+  }
+
+  document.getElementById("signup-btn").addEventListener("click", function () {
+    const username = document.getElementById("username");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+
+    const usernameError = document.getElementById("username-error");
+    const emailError = document.getElementById("email-error");
+    const passwordError = document.getElementById("password-error");
+
+    let isValid = true;
+
+    // Username validation
+    if (!username.value.trim()) {
+      usernameError.classList.remove("hidden");
+      isValid = false;
+    } else {
+      usernameError.classList.add("hidden");
+    }
+
+    // Email validation
+    const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+    if (!emailRegex.test(email.value.trim())) {
+      emailError.textContent = "Please enter a valid email address";
+      emailError.classList.remove("hidden");
+      isValid = false;
+    } else {
+      emailError.classList.add("hidden");
+    }
+
+    // Password validation (must be at least 6 characters)
+    if (password.value.trim().length < 6) {
+      passwordError.textContent = "Password must be at least 6 characters";
+      passwordError.classList.remove("hidden");
+      isValid = false;
+    } else {
+      passwordError.classList.add("hidden");
+    }
+
+    if (isValid) {
+      alert("Signup successful (dummy alert)");
+      // TODO: connect to Django backend via fetch or POST
+    }
+  });
+</script>
+
+
+</body>
+</html>
