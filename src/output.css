@@ -8,14 +8,10 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-500: oklch(63.7% 0.237 25.331);
-    --color-gray-200: oklch(92.8% 0.006 264.531);
-    --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
     --container-md: 28rem;
-    --text-xs: 0.75rem;
-    --text-xs--line-height: calc(1 / 0.75);
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
     --font-weight-normal: 400;
@@ -350,9 +346,6 @@
   .w-full {
     width: 100%;
   }
-  .max-w-\[720px\] {
-    max-width: 720px;
-  }
   .max-w-md {
     max-width: var(--container-md);
   }
@@ -406,6 +399,9 @@
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
+  .gap-\[04px\] {
+    gap: 04px;
+  }
   .gap-\[4px\] {
     gap: 4px;
   }
@@ -426,6 +422,9 @@
   }
   .gap-\[32px\] {
     gap: 32px;
+  }
+  .gap-\[44px\] {
+    gap: 44px;
   }
   .gap-\[64px\] {
     gap: 64px;
@@ -817,16 +816,6 @@
       font-size: 16px;
     }
   }
-  .max-xl\:text-\[28px\] {
-    @media (width < 80rem) {
-      font-size: 28px;
-    }
-  }
-  .max-xl\:text-\[48px\] {
-    @media (width < 80rem) {
-      font-size: 48px;
-    }
-  }
   .max-lg\:bottom-\[16px\] {
     @media (width < 64rem) {
       bottom: 16px;
@@ -912,19 +901,9 @@
       gap: 88px;
     }
   }
-  .max-lg\:text-\[20px\] {
-    @media (width < 64rem) {
-      font-size: 20px;
-    }
-  }
   .max-lg\:text-\[24px\] {
     @media (width < 64rem) {
       font-size: 24px;
-    }
-  }
-  .max-lg\:text-\[48px\] {
-    @media (width < 64rem) {
-      font-size: 48px;
     }
   }
   .max-lg\:opacity-100 {
@@ -965,11 +944,6 @@
   .max-md\:mt-\[32px\] {
     @media (width < 48rem) {
       margin-top: 32px;
-    }
-  }
-  .max-md\:mt-\[44px\] {
-    @media (width < 48rem) {
-      margin-top: 44px;
     }
   }
   .max-md\:mt-\[100px\] {
@@ -1042,11 +1016,6 @@
       padding-top: 96px;
     }
   }
-  .max-md\:text-\[10px\] {
-    @media (width < 48rem) {
-      font-size: 10px;
-    }
-  }
   .max-md\:text-\[14px\] {
     @media (width < 48rem) {
       font-size: 14px;
@@ -1057,14 +1026,14 @@
       font-size: 32px;
     }
   }
+  .max-md\:text-\[36px\] {
+    @media (width < 48rem) {
+      font-size: 36px;
+    }
+  }
   .max-sm\:my-\[28px\] {
     @media (width < 40rem) {
       margin-block: 28px;
-    }
-  }
-  .max-sm\:mt-\[28px\] {
-    @media (width < 40rem) {
-      margin-top: 28px;
     }
   }
   .max-sm\:grid-cols-1 {
@@ -1092,9 +1061,19 @@
       font-size: 24px;
     }
   }
+  .max-sm\:text-\[28px\] {
+    @media (width < 40rem) {
+      font-size: 28px;
+    }
+  }
   .max-sm\:text-\[32px\] {
     @media (width < 40rem) {
       font-size: 32px;
+    }
+  }
+  .max-sm\:text-\[36px\] {
+    @media (width < 40rem) {
+      font-size: 36px;
     }
   }
   .max-sm\:text-\[40px\] {
@@ -1106,6 +1085,11 @@
     @media (width < 40rem) {
       --tw-leading: 44px;
       line-height: 44px;
+    }
+  }
+  .max-sm\:text-\[px\] {
+    @media (width < 40rem) {
+      color: px;
     }
   }
   .md\:hidden {
