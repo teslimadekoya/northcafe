@@ -77,11 +77,11 @@
 
 <div class="hidden lg:flex items-center justify-center gap-[24px] max-sm:gap-[16px]">
   <button id="prevBtn" class="w-[64px] h-[64px] max-xl:w-[48px] max-xl:h-[48px] max-lg:w-[36px] max-lg:h-[36px] max-md:w-[24px] max-md:h-[24px] flex items-center justify-center">
-    <i id="leftArrow" class="fas fa-chevron-left text-[32px] max-xl:text-[28px] max-lg:text-[20px] max-md:text-[10px] cursor-pointer"></i>
+  <i id="leftArrow" class="fas fa-chevron-left text-[32px] max-xl:text-[28px] max-lg:text-[20px] max-md:text-[10px] cursor-pointer text-[#010101]"></i>
   </button>
   <img id="foodImage" src="/images/Frame52.png" alt="Food" class="mx-auto w-full h-auto object-cover rounded-md transition-all duration-300 max-xl:w-[720px]" />
   <button id="nextBtn" class="w-[64px] h-[64px] max-xl:w-[48px] max-xl:h-[48px] max-lg:w-[36px] max-lg:h-[36px] max-md:w-[24px] max-md:h-[24px] flex items-center justify-center">
-    <i id="rightArrow" class="fas fa-chevron-right text-[32px] max-xl:text-[28px] max-lg:text-[20px] max-md:text-[10px] cursor-pointer"></i>
+  <i id="rightArrow" class="fas fa-chevron-right text-[32px] max-xl:text-[28px] max-lg:text-[20px] max-md:text-[10px] cursor-pointer text-[#010101]"></i>
   </button>
 </div>
 
@@ -91,10 +91,10 @@
     <img id="foodImageMobile" src="/images/Frame52.png" alt="Food" class="mx-auto w-full h-auto object-cover rounded-md transition-all duration-300 max-xl:w-[720px]" />
     <div class="flex gap-[24px] max-sm:gap-[16px]">
       <button id="prevBtnMobile">
-        <i id="leftArrowMobile" class="fas fa-chevron-left text-[64px] max-lg:text-[48px] cursor-pointer"></i>
+      <i id="leftArrowMobile" class="fas fa-chevron-left text-[64px] max-lg:text-[48px] cursor-pointer text-[#010101]"></i>
       </button>
       <button id="nextBtnMobile">
-        <i id="rightArrowMobile" class="fas fa-chevron-right text-[64px] max-lg:text-[48px] cursor-pointer"></i>
+      <i id="rightArrowMobile" class="fas fa-chevron-right text-[64px] max-lg:text-[48px] cursor-pointer text-[#010101]"></i>
       </button>
     </div>
   </div>
@@ -185,45 +185,52 @@
   const nextBtnMobile = document.getElementById("nextBtnMobile");
 
   let currentIndex = 0;
-
 function updateSlideshow() {
   if (foodImage) foodImage.src = images[currentIndex];
   if (foodImageMobile) foodImageMobile.src = images[currentIndex];
 
-  // Update left chevron color
+  // Update left chevron colors
   const leftArrow = document.getElementById("leftArrow");
+  const leftArrowMobile = document.getElementById("leftArrowMobile");
   if (leftArrow) {
-    leftArrow.style.color = currentIndex === 0 ? "#C4C4C4" : "white";
+    leftArrow.style.color = currentIndex === 0 ? "#C4C4C4" : "#010101";
+  }
+  if (leftArrowMobile) {
+    leftArrowMobile.style.color = currentIndex === 0 ? "#C4C4C4" : "#010101";
   }
 
-  // Update right chevron color
+  // Update right chevron colors
   const rightArrow = document.getElementById("rightArrow");
+  const rightArrowMobile = document.getElementById("rightArrowMobile");
   if (rightArrow) {
-    rightArrow.style.color = currentIndex === images.length - 1 ? "#C4C4C4" : "white";
+    rightArrow.style.color = currentIndex === images.length - 1 ? "#C4C4C4" : "#010101";
+  }
+  if (rightArrowMobile) {
+    rightArrowMobile.style.color = currentIndex === images.length - 1 ? "#C4C4C4" : "#010101";
   }
 }
 
-
-  function goToPrev() {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateSlideshow();
-    }
+function goToPrev() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateSlideshow();
   }
+}
 
-  function goToNext() {
-    if (currentIndex < images.length - 1) {
-      currentIndex++;
-      updateSlideshow();
-    }
+function goToNext() {
+  if (currentIndex < images.length - 1) {
+    currentIndex++;
+    updateSlideshow();
   }
+}
 
-  prevBtn?.addEventListener("click", goToPrev);
-  nextBtn?.addEventListener("click", goToNext);
-  prevBtnMobile?.addEventListener("click", goToPrev);
-  nextBtnMobile?.addEventListener("click", goToNext);
+prevBtn?.addEventListener("click", goToPrev);
+nextBtn?.addEventListener("click", goToNext);
+prevBtnMobile?.addEventListener("click", goToPrev);
+nextBtnMobile?.addEventListener("click", goToNext);
 
-  updateSlideshow();
+updateSlideshow();
+
 </script>
 </body>
 </html>
