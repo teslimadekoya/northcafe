@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navbar Logged In – North Café</title>
+  <link rel="stylesheet" href="output.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-white">
+  <header class="w-full flex items-center justify-between px-16 py-8">
+    <!-- Left: Logo -->
+    <div>
+      <a href="/" class="text-[#B20201] font-[700] text-[36px] leading-[44px] dancing-script">North Cafe</a>
+    </div>
+
+    <!-- Center: Menu Links -->
+    <nav class="flex gap-10 items-center">
+      <a href="#" class="text-[#4E4E4E] text-[20px] font-[400] hover:text-[#010101] transition">Menu</a>
+      <a href="#" class="text-[#4E4E4E] text-[20px] font-[400] hover:text-[#010101] transition">About</a>
+      <a href="#" class="text-[#4E4E4E] text-[20px] font-[400] hover:text-[#010101] transition">Careers</a>
+    </nav>
+
+    <!-- Right: Cart, User Info, Avatar, Dropdown -->
+    <div class="flex items-center gap-[16px]">
+      <i class="fas fa-shopping-cart text-[22px] text-[#010101]"></i>
+      <div class="flex flex-col items-start mr-2">
+        <span class="text-[#010101] text-[18px] font-[600] leading-tight">Teslim</span>
+        <span class="text-[#888888] text-[14px] font-[400] leading-tight">Student</span>
+      </div>
+      <div class="relative flex items-center gap-2">
+        <span class="inline-block w-[44px] h-[44px] rounded-full bg-black"></span>
+        <span class="text-[#010101] text-[18px]">▼</span>
+      </div>
+    </div>
+  </header>
+</body>
+</html>
