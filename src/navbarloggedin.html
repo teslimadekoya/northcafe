@@ -12,31 +12,43 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="bg-white">
-  <header class="w-full flex items-center justify-between px-16 py-8">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white px-[64px] py-[32px] flex justify-between items-center max-md:px-[16px]">
+    
     <!-- Left: Logo -->
-    <div>
-      <a href="/" class="text-[#B20201] font-[700] text-[36px] leading-[44px] dancing-script">North Cafe</a>
-    </div>
-
-    <!-- Center: Menu Links -->
-    <nav class="flex gap-10 items-center">
-      <a href="#" class="text-[#4E4E4E] text-[20px] font-[400] hover:text-[#010101] transition">Menu</a>
-      <a href="#" class="text-[#4E4E4E] text-[20px] font-[400] hover:text-[#010101] transition">About</a>
-      <a href="#" class="text-[#4E4E4E] text-[20px] font-[400] hover:text-[#010101] transition">Careers</a>
+    <nav>
+      <a href="/" class="text-[#B20201] font-[700] text-[36px] leading-[44px] dancing-script max-lg:text-[24px]">North Café</a>
     </nav>
 
-    <!-- Right: Cart, User Info, Avatar, Dropdown -->
-    <div class="flex items-center gap-[16px]">
-      <i class="fas fa-shopping-cart text-[22px] text-[#010101]"></i>
-      <div class="flex flex-col items-start mr-2">
-        <span class="text-[#010101] text-[18px] font-[600] leading-tight">Teslim</span>
-        <span class="text-[#888888] text-[14px] font-[400] leading-tight">Student</span>
+    <!-- Center: Navigation Links -->
+    <nav class="flex gap-[24px] items-center text-[16px] custom-font leading-[32px] max-lg:gap-[16px] max-md:hidden">
+      <a href="#" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">Menu</a>
+      <a href="#" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">About</a>
+      <a href="#" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">Careers</a>
+    </nav>
+
+    <!-- Right: Cart + User Info + Avatar + Dropdown -->
+    <nav class="flex gap-[24px] items-center custom-font leading-[26px]">
+      <!-- Mobile Icons -->
+      <div class="md:hidden flex items-center justify-center gap-[16px]">
+        <i class="fas fa-search text-[#010101] text-[20px] flex items-center"></i>
+        <button onclick="toggleMenu()" class="flex items-center justify-center">
+          <i class="fas fa-bars text-[#010101] text-[20px] cursor-pointer"></i>
+        </button>
       </div>
-      <div class="relative flex items-center gap-2">
-        <span class="inline-block w-[44px] h-[44px] rounded-full bg-black"></span>
-        <span class="text-[#010101] text-[18px]">▼</span>
+
+      <!-- Logged-in User Info -->
+      <div class="hidden md:flex items-center gap-[16px]">
+        <i class="fas fa-shopping-cart text-[20px] text-[#010101]"></i>
+        <div class="flex flex-col items-start mr-2">
+          <span class="text-[#010101] text-[16px] font-[600] leading-tight">Teslim</span>
+          <span class="text-green-800 text-[14px] font-[400] leading-tight">Manage Account</span>
+        </div>
+        <div class="relative flex items-center gap-2">
+          <span class="inline-block w-[40px] h-[40px] rounded-full bg-black"></span>
+          <span class="text-[#010101] text-[16px]">▼</span>
+        </div>
       </div>
-    </div>
+    </nav>
   </header>
 </body>
 </html>
