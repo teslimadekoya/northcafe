@@ -22,6 +22,18 @@
       font-family: "Satisfy", cursive;
     }
   }
+@media (max-width: 375px) {
+  .delivery-location-wrapper {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+  
+  /* Optional: Make the select take full width on small screens */
+  .delivery-location-wrapper select {
+    width: 100% !important;
+  }
+}
 
 
 /* Show ONLY the mute/unmute button */
