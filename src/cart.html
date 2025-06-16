@@ -320,12 +320,13 @@
     <div class="bg-white rounded-[12px] p-[32px] max-w-[400px] w-full mx-4 transform scale-95 transition-transform duration-200">
       <h3 class="custom-font font-[600] text-[24px] text-[#010101] mb-[16px]">Remove Item</h3>
       <p class="custom-font text-[16px] text-[#4E4E4E] mb-[24px]">Are you sure you want to remove this item from your cart?</p>
-      <div class="flex gap-[16px] justify-end">
-        <button onclick="closeDeleteModal()" class="px-[24px] py-[12px] custom-font text-[16px] text-[#4E4E4E] border border-[#D1D1D1] rounded-[900px] hover:bg-[#F3F3F3] transition-colors duration-200">Cancel</button>
-        <button onclick="removeItem()" class="px-[24px] py-[12px] custom-font text-[16px] text-white bg-[#B20201] rounded-[900px] hover:bg-[#8B0101] transition-colors duration-200">Remove</button>
+      <div class="flex flex-col gap-[16px] items-center w-full">
+        <button onclick="closeDeleteModal()" class="w-full whitespace-nowrap px-[24px] py-[12px] custom-font text-[16px] text-[#4E4E4E] border border-[#D1D1D1] rounded-[900px] hover:bg-[#F3F3F3] transition-colors duration-200">Cancel</button>
+        <button onclick="removeItem()" class="w-full whitespace-nowrap px-[24px] py-[12px] custom-font text-[16px] text-white bg-[#B20201] rounded-[900px] hover:bg-[#8B0101] transition-colors duration-200">Remove</button>
       </div>
     </div>
   </div>
+
 
   <script>
     function toggleMenu() {
