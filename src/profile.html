@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>North Cafe</title>
+  <link rel="stylesheet" href="output.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="min-h-screen">
+<!-- Header -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white px-[64px] py-[32px] flex justify-between items-center max-md:px-[16px]">
+  <nav>
+    <a href="" class="text-[#B20201] font-[700] text-[36px] leading-[44px] dancing-script max-lg:text-[24px]">North Café</a>
+  </nav>
+  <nav class="flex gap-[24px] items-center text-[16px] custom-font leading-[32px] max-lg:gap-[16px] max-md:hidden">
+    <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">Menu</a>
+    <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">About</a>
+    <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">Careers</a>
+  </nav>
+  <nav class="flex gap-[24px] items-center custom-font leading-[26px]">
+    <div class="md:hidden flex items-center justify-center gap-[16px]">
+      <i class="fas fa-search text-[#010101] text-[20px] flex items-center"></i>
+      <button onclick="toggleMenu()" class="flex items-center justify-center">
+        <i class="fas fa-bars text-[#010101] text-[20px] cursor-pointer"></i>
+      </button>
+    </div>
+    <a href="" class="text-[#B20201] text-[20px] font-[700] max-md:hidden custom-font">Log In</a>
+    <a href="" class="px-[24px] py-[12px] custom-font text-[20px] text-white bg-[#B20201] font-[700] max-md:hidden">Sign Up</a>
+  </nav>
+</header>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="fixed inset-0 z-50 bg-white hidden">
+  <div class="flex flex-col h-full p-[32px]">
+    <div class="flex justify-end">
+      <button onclick="toggleMenu()">
+        <i class="fas fa-times text-[32px]"></i>
+      </button>
+    </div>
+    <div class="flex flex-col items-center justify-center flex-1 gap-[24px]">
+      <a href="#" class="text-[#4E4E4E] text-[20px] font-[500] hover:font-[700] hover:text-[#010101]">Menu</a>
+      <a href="#" class="text-[#4E4E4E] text-[20px] font-[500] hover:font-[700] hover:text-[#010101]">About</a>
+      <a href="#" class="text-[#4E4E4E] text-[20px] font-[500] hover:font-[700] hover:text-[#010101]">Careers</a>
+      <a href="#" class="text-[#B20201] text-[20px] font-[700] mt-[32px]">Log In</a>
+      <a href="#" class="px-[24px] py-[12px] text-[20px] text-white bg-[#B20201] font-[700] w-fit">Sign Up</a>
+    </div>
+  </div>
+</div>
+
+<!-- Profile Section -->
+<main class="flex items-center justify-center px-[64px] max-md:px-[16px] mt-[160px] max-sm:mt-[120px] mb-[64px]">
+  <div class="w-full max-w-md flex flex-col items-center">
+
+    <!-- Profile Image Upload -->
+    <div class="flex flex-col items-center mb-[32px]">
+      <div class="relative w-[120px] h-[120px]">
+        <img id="profile-preview" src="/images/noprofile.png" alt="Profile Picture" class="w-full h-full object-cover rounded-full border border-[#D1D1D1]" />
+        <label for="profile-image" class="absolute bottom-0 right-0 w-8 h-8 bg-[#B20201] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#900000]">
+          <i class="fas fa-edit text-white text-[16px]"></i>
+        </label>
+
+        <input type="file" id="profile-image" accept="image/*" class="hidden" onchange="previewProfileImage(event)" />
+      </div>
+      <p class="mt-2 text-[14px] text-[#4E4E4E]">Tap edit icon to change</p>
+    </div>
+
+    <h2 class="custom-font font-[700] text-[28px] leading-[36px] text-[#010101] mb-[24px]">Profile</h2>
+
+    <div class="mb-4 w-full">
+      <label for="username" class="text-[18px] leading-[28px]">Username</label>
+      <input type="text" id="username" value="teslimadekoya11" class="w-full mt-[8px] px-[24px] py-[12px] rounded-[12px] border border-[#D1D1D1] bg-gray-100" />
+    </div>
+
+    <div class="mb-4 w-full">
+      <label for="user-email" class="text-[18px] leading-[28px]">Email Address</label>
+      <input type="email" id="user-email" value="teslimadekoya11@gmail.com" class="w-full mt-[8px] px-[24px] py-[12px] rounded-[12px] border border-[#D1D1D1] bg-gray-100" />
+    </div>
+
+    <div class="mb-4 w-full">
+      <label for="old-password" class="text-[18px] leading-[28px]">Old Password</label>
+      <div class="relative">
+        <input type="password" id="old-password" placeholder="Old Password" class="w-full mt-[8px] px-[24px] py-[12px] rounded-[12px] border bg-gray-100" />
+        <button type="button" onclick="togglePassword('old-password', 'toggleOld')" class="absolute right-[16px] top-[50%] -translate-y-[50%]">
+          <img id="toggleOld" src="/images/See.svg" alt="Show Password" class="w-5 h-5 cursor-pointer" />
+        </button>
+      </div>
+    </div>
+
+    <div class="mb-4 w-full">
+      <label for="new-password" class="text-[18px] leading-[28px]">New Password</label>
+      <div class="relative">
+        <input type="password" id="new-password" placeholder="New Password" class="w-full mt-[8px] px-[24px] py-[12px] rounded-[12px] border bg-gray-100" />
+        <button type="button" onclick="togglePassword('new-password', 'toggleNew')" class="absolute right-[16px] top-[50%] -translate-y-[50%]">
+          <img id="toggleNew" src="/images/See.svg" alt="Show Password" class="w-5 h-5 cursor-pointer" />
+        </button>
+      </div>
+    </div>
+
+    <div class="mb-4 w-full">
+      <label for="confirm-password" class="text-[18px] leading-[28px]">Confirm New Password</label>
+      <div class="relative">
+        <input type="password" id="confirm-password" placeholder="New Password" class="w-full mt-[8px] px-[24px] py-[12px] rounded-[12px] border bg-gray-100" />
+        <button type="button" onclick="togglePassword('confirm-password', 'toggleConfirm')" class="absolute right-[16px] top-[50%] -translate-y-[50%]">
+          <img id="toggleConfirm" src="/images/See.svg" alt="Show Password" class="w-5 h-5 cursor-pointer" />
+        </button>
+      </div>
+    </div>
+
+    <div class="mt-6 flex justify-end w-full">
+      <button onclick="saveChanges()" class="px-[24px] py-[12px] text-[16px] text-white bg-[#B20201] rounded-[12px] font-[700] hover:bg-[#900000]">Save Changes</button>
+    </div>
+
+  </div>
+</main>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("mobile-menu");
+    menu.classList.toggle("hidden");
+  }
+
+  function togglePassword(inputId, toggleId) {
+    const input = document.getElementById(inputId);
+    const icon = document.getElementById(toggleId);
+    const isHidden = input.type === "password";
+
+    input.type = isHidden ? "text" : "password";
+    icon.src = isHidden ? "/images/Hide.svg" : "/images/See.svg";
+    icon.alt = isHidden ? "Hide Password" : "Show Password";
+  }
+
+  function previewProfileImage(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById("profile-preview").src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  function saveChanges() {
+    const oldPassword = document.getElementById("old-password").value.trim();
+    const newPassword = document.getElementById("new-password").value.trim();
+    const confirmPassword = document.getElementById("confirm-password").value.trim();
+
+    const existingError = document.getElementById("error-message");
+    if (existingError) existingError.remove();
+
+    if (!oldPassword) return showError("Please enter your old password.");
+    if (!newPassword || !confirmPassword) return showError("Please fill in both new password fields.");
+    if (newPassword.length < 8) return showError("Password must be at least 8 characters long.");
+    if (newPassword !== confirmPassword) return showError("Passwords do not match.");
+
+    alert("Profile updated successfully.");
+  }
+
+  function showError(message) {
+    const errorDiv = document.createElement("div");
+    errorDiv.id = "error-message";
+    errorDiv.className = "text-red-600 text-[14px] font-medium mb-[16px]";
+    errorDiv.innerText = message;
+    const form = document.querySelector("main div.w-full");
+    form.insertBefore(errorDiv, form.children[form.children.length - 1]);
+  }
+</script>
+
+</body>
+</html>
