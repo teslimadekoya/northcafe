@@ -18,22 +18,37 @@
  <!-- Header -->
 <header class="fixed top-0 left-0 right-0 z-50 bg-white px-[64px] py-[32px] flex justify-between items-center max-md:px-[16px]">
   <nav>
-    <a href="" class="text-[#B20201] font-[700] text-[36px] leading-[44px] dancing-script max-lg:text-[24px]">North Café</a>
+    <a href="index.html" class="logo text-[#B20201] font-[700] text-[36px] leading-[44px] dancing-script max-lg:text-[24px]">
+      North Café
+    </a>
   </nav>
+
   <nav class="flex gap-[24px] items-center text-[16px] custom-font leading-[32px] max-lg:gap-[16px] max-md:hidden">
-    <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">Menu</a>
-    <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">About</a>
-    <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">Careers</a>
+    <a href="index.html" class="text-[#4E4E4E] hover:text-[#010101] custom-font">Menu</a>
+    <a href="about.html" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">About</a>
+    <a href="about.html#careers" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">Careers</a>
   </nav>
+
   <nav class="flex gap-[24px] items-center custom-font leading-[26px]">
+    <!-- Cart Icon (Desktop Only) -->
+    <a href="cart.html" class="hidden md:flex">
+      <i class="fas fa-shopping-cart text-[20px] text-[#010101]"></i>
+    </a>
+
+    <!-- Mobile Menu Icons -->
     <div class="md:hidden flex items-center justify-center gap-[16px]">
-      <i class="fas fa-search text-[#010101] text-[20px] flex items-center"></i>
+      <a href="cart.html" class="flex">
+        <i class="fas fa-shopping-cart text-[#010101] text-[20px]"></i>
+      </a>
+        <i onclick="toggleMobileSearch()" class="fas fa-search text-[#010101] text-[20px] flex items-center cursor-pointer"></i>
       <button onclick="toggleMenu()" class="flex items-center justify-center">
         <i class="fas fa-bars text-[#010101] text-[20px] cursor-pointer"></i>
       </button>
     </div>
-    <a href="" class="text-[#B20201] text-[20px] font-[700] max-md:hidden custom-font">Log In</a>
-    <a href="" class="px-[24px] py-[12px] custom-font text-[20px] text-white bg-[#B20201] font-[700] max-md:hidden">Sign Up</a>
+
+    <!-- Login / Sign Up (Desktop Only) -->
+    <a href="login.html" class="text-[#B20201] text-[20px] font-[700] max-md:hidden custom-font">Log In</a>
+    <a href="signup.html" class="px-[24px] py-[12px] custom-font text-[20px] text-white bg-[#B20201] font-[700] max-md:hidden">Sign Up</a>
   </nav>
 </header>
 
@@ -46,241 +61,130 @@
       </button>
     </div>
     <div class="flex flex-col items-center justify-center flex-1 gap-[24px]">
-      <a href="#" class="text-[#4E4E4E] text-[20px] font-[500] hover:font-[700] hover:text-[#010101]">Menu</a>
-      <a href="#" class="text-[#4E4E4E] text-[20px] font-[500] hover:font-[700] hover:text-[#010101]">About</a>
-      <a href="#" class="text-[#4E4E4E] text-[20px] font-[500] hover:font-[700] hover:text-[#010101]">Careers</a>
-      <a href="#" class="text-[#B20201] text-[20px] font-[700] mt-[32px]">Log In</a>
-      <a href="#" class="px-[24px] py-[12px] text-[20px] text-white bg-[#B20201] font-[700] w-fit">Sign Up</a>
+      <a href="index.html" class="text-[#4E4E4E] text-[20px] font-[500] hover:font-[700] hover:text-[#010101]">Menu</a>
+      <a href="about.html" class="text-[#4E4E4E] text-[20px] font-[500] hover:font-[700] hover:text-[#010101]">About</a>
+      <a href="about.html#careers" class="text-[#4E4E4E] text-[20px] font-[500] hover:font-[700] hover:text-[#010101]">Careers</a>
+      <a href="login.html" class="text-[#B20201] text-[20px] font-[700] mt-[32px]">Log In</a>
+      <a href="signup.html" class="px-[24px] py-[12px] text-[20px] text-white bg-[#B20201] font-[700] w-fit">Sign Up</a>
     </div>
   </div>
 </div>
 
-    <section id="menu" class="mx-[64px] max-md:mx-[16px] ">
+<!-- Mobile Search Overlay -->
+<div id="mobile-search" class="fixed inset-0 bg-white z-50 hidden flex flex-col p-[24px]">
+  <div class="flex justify-between items-center mb-[24px]">
+    <div class="flex items-center gap-2 flex-1 border border-[#D1D1D1] px-4 py-2 rounded-[900px]">
+      <i class="fas fa-search text-[#010101]"></i>
+      <input type="text" placeholder="Search Menu" class="w-full bg-transparent focus:outline-none text-[16px]" />
+    </div>
+    <button onclick="toggleMobileSearch()" class="ml-4 text-[#010101] text-[16px]">Cancel</button>
+  </div>
+
+  <!-- Optionally: Add search suggestions or recent items here -->
+</div>
+
+
+<!-- Main Content -->
+<main>
+    <section id="menu" class="mx-[64px] max-md:mx-[16px]">
         <h1 class="text-[#010101] text-[48px] my-[32px] mt-[120px] text-center font-custom-font max-lg:my-[24px] max-md:my-[16px] max-sm:text-[40px] max-lg:mt-[100px] max-md:mt-[100px]">Menu</h1>
+        
+        <!-- Search Bar (Desktop Only) -->
         <div class="relative w-full border pl-10 py-[8px] px-[24px] rounded-[900px] border-[#D1D1D1] max-md:hidden">
             <img src="/images/SearchIcon.svg" alt="Search" class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 opacity-60" />
             <input type="search" placeholder="Search for items..." class="text-[] w-full focus:outline-none focus:ring-0 text-[16px] leading-[24px] text-[#010101] bg-transparent" />
         </div>
 
-        
-    <div class="grid grid-cols-3 gap-[128px] max-lg:grid-cols-2 max-lg:gap-[88px] max-md:grid-cols-1 max-md:gap-[44px] mb-[200px]">
-    <a href="">
-        <div class="flex flex-col items-center group relative">
-        <img src="/images/foodDefault.png" alt="" class="group-hover:hidden max-lg:hidden" />
-        <img src="/images/foodHovered.png" alt="" class="hidden group-hover:block max-lg:block mt-8" />
-        <div class="flex flex-col items-center opacity-0 group-hover:opacity-100 max-lg:opacity-100 mt-8 transition-all duration-300">
-            <p class="custom-font text-[22px] font-[700] text-center mb-[2px] text-[#010101]">Fried Rice</p>
-            <p class="text-[#4E4E4E] custom-font text-center">₦4,000</p>
-            <div class="flex items-center mt-2 cursor-pointer">
-            <img src="/images/add.svg" alt="Add to cart" />
-            <span class="custom-font text-[18px] text-[#B20201] font-[400] ml-2">Add to cart</span>
-            </div>
+        <!-- Food Grid -->
+        <div class="grid grid-cols-3 gap-[128px] max-lg:grid-cols-2 max-lg:gap-[88px] max-md:grid-cols-1 max-md:gap-[44px] mb-[200px]">
+            <!-- Food Item Template -->
+            <a href="add.html">
+                <div class="flex flex-col items-center group relative">
+                    <img src="/images/foodDefault.png" alt="" class="group-hover:hidden max-lg:hidden" />
+                    <img src="/images/foodHovered.png" alt="" class="hidden group-hover:block max-lg:block mt-8" />
+                    <div class="flex flex-col items-center opacity-0 group-hover:opacity-100 max-lg:opacity-100 mt-8 transition-all duration-300">
+                        <p class="custom-font text-[22px] font-[700] text-center mb-[2px] text-[#010101]">Fried Rice</p>
+                        <p class="text-[#4E4E4E] custom-font text-center">₦4,000</p>
+                        <div class="flex items-center mt-2 cursor-pointer">
+                            <img src="/images/add.svg" alt="Add to cart" />
+                            <span class="custom-font text-[18px] text-[#B20201] font-[400] ml-2">Add to cart</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <!-- Repeat food items as needed -->
         </div>
-        </div>
-    </a>
-
-    <a href="">
-        <div class="flex flex-col items-center group relative">
-        <img src="/images/foodDefault.png" alt="" class="group-hover:hidden max-lg:hidden" />
-        <img src="/images/foodHovered.png" alt="" class="hidden group-hover:block max-lg:block mt-8" />
-        <div class="flex flex-col items-center opacity-0 group-hover:opacity-100 max-lg:opacity-100 mt-8 transition-all duration-300">
-            <p class="custom-font text-[22px] font-[700] text-center mb-[2px] text-[#010101]">Fried Rice</p>
-            <p class="text-[#4E4E4E] custom-font text-center">₦4,000</p>
-            <div class="flex items-center mt-2 cursor-pointer">
-            <img src="/images/add.svg" alt="Add to cart" />
-            <span class="custom-font text-[18px] text-[#B20201] font-[400] ml-2">Add to cart</span>
-            </div>
-        </div>
-        </div>
-    </a>
-
-    <a href="">
-        <div class="flex flex-col items-center group relative">
-        <img src="/images/foodDefault.png" alt="" class="group-hover:hidden max-lg:hidden" />
-        <img src="/images/foodHovered.png" alt="" class="hidden group-hover:block max-lg:block mt-8" />
-        <div class="flex flex-col items-center opacity-0 group-hover:opacity-100 max-lg:opacity-100 mt-8 transition-all duration-300">
-            <p class="custom-font text-[22px] font-[700] text-center mb-[2px] text-[#010101]">Fried Rice</p>
-            <p class="text-[#4E4E4E] custom-font text-center">₦4,000</p>
-            <div class="flex items-center mt-2 cursor-pointer">
-            <img src="/images/add.svg" alt="Add to cart" />
-            <span class="custom-font text-[18px] text-[#B20201] font-[400] ml-2">Add to cart</span>
-            </div>
-        </div>
-        </div>
-    </a>
-
-    <a href="">
-        <div class="flex flex-col items-center group relative">
-        <img src="/images/foodDefault.png" alt="" class="group-hover:hidden max-lg:hidden" />
-        <img src="/images/foodHovered.png" alt="" class="hidden group-hover:block max-lg:block mt-8" />
-        <div class="flex flex-col items-center opacity-0 group-hover:opacity-100 max-lg:opacity-100 mt-8 transition-all duration-300">
-            <p class="custom-font text-[22px] font-[700] text-center mb-[2px] text-[#010101]">Fried Rice</p>
-            <p class="text-[#4E4E4E] custom-font text-center">₦4,000</p>
-            <div class="flex items-center mt-2 cursor-pointer">
-            <img src="/images/add.svg" alt="Add to cart" />
-            <span class="custom-font text-[18px] text-[#B20201] font-[400] ml-2">Add to cart</span>
-            </div>
-        </div>
-        </div>
-    </a>
-
-    <a href="">
-        <div class="flex flex-col items-center group relative">
-        <img src="/images/foodDefault.png" alt="" class="group-hover:hidden max-lg:hidden" />
-        <img src="/images/foodHovered.png" alt="" class="hidden group-hover:block max-lg:block mt-8" />
-        <div class="flex flex-col items-center opacity-0 group-hover:opacity-100 max-lg:opacity-100 mt-8 transition-all duration-300">
-            <p class="custom-font text-[22px] font-[700] text-center mb-[2px] text-[#010101]">Fried Rice</p>
-            <p class="text-[#4E4E4E] custom-font text-center">₦4,000</p>
-            <div class="flex items-center mt-2 cursor-pointer">
-            <img src="/images/add.svg" alt="Add to cart" />
-            <span class="custom-font text-[18px] text-[#B20201] font-[400] ml-2">Add to cart</span>
-            </div>
-        </div>
-        </div>
-    </a>
-
-    <a href="">
-        <div class="flex flex-col items-center group relative">
-        <img src="/images/foodDefault.png" alt="" class="group-hover:hidden max-lg:hidden" />
-        <img src="/images/foodHovered.png" alt="" class="hidden group-hover:block max-lg:block mt-8" />
-        <div class="flex flex-col items-center opacity-0 group-hover:opacity-100 max-lg:opacity-100 mt-8 transition-all duration-300">
-            <p class="custom-font text-[22px] font-[700] text-center mb-[2px] text-[#010101]">Fried Rice</p>
-            <p class="text-[#4E4E4E] custom-font text-center">₦4,000</p>
-            <div class="flex items-center mt-2 cursor-pointer">
-            <img src="/images/add.svg" alt="Add to cart" />
-            <span class="custom-font text-[18px] text-[#B20201] font-[400] ml-2">Add to cart</span>
-            </div>
-        </div>
-        </div>
-    </a>
-
-    <a href="">
-        <div class="flex flex-col items-center group relative">
-        <img src="/images/foodDefault.png" alt="" class="group-hover:hidden max-lg:hidden" />
-        <img src="/images/foodHovered.png" alt="" class="hidden group-hover:block max-lg:block mt-8" />
-        <div class="flex flex-col items-center opacity-0 group-hover:opacity-100 max-lg:opacity-100 mt-8 transition-all duration-300">
-            <p class="custom-font text-[22px] font-[700] text-center mb-[2px] text-[#010101]">Fried Rice</p>
-            <p class="text-[#4E4E4E] custom-font text-center">₦4,000</p>
-            <div class="flex items-center mt-2 cursor-pointer">
-            <img src="/images/add.svg" alt="Add to cart" />
-            <span class="custom-font text-[18px] text-[#B20201] font-[400] ml-2">Add to cart</span>
-            </div>
-        </div>
-        </div>
-    </a>
-
-    <a href="">
-        <div class="flex flex-col items-center group relative">
-        <img src="/images/foodDefault.png" alt="" class="group-hover:hidden max-lg:hidden" />
-        <img src="/images/foodHovered.png" alt="" class="hidden group-hover:block max-lg:block mt-8" />
-        <div class="flex flex-col items-center opacity-0 group-hover:opacity-100 max-lg:opacity-100 mt-8 transition-all duration-300">
-            <p class="custom-font text-[22px] font-[700] text-center mb-[2px] text-[#010101]">Fried Rice</p>
-            <p class="text-[#4E4E4E] custom-font text-center">₦4,000</p>
-            <div class="flex items-center mt-2 cursor-pointer">
-            <img src="/images/add.svg" alt="Add to cart" />
-            <span class="custom-font text-[18px] text-[#B20201] font-[400] ml-2">Add to cart</span>
-            </div>
-        </div>
-        </div>
-    </a>
-
-    <a href="">
-        <div class="flex flex-col items-center group relative">
-        <img src="/images/foodDefault.png" alt="" class="group-hover:hidden max-lg:hidden" />
-        <img src="/images/foodHovered.png" alt="" class="hidden group-hover:block max-lg:block mt-8" />
-        <div class="flex flex-col items-center opacity-0 group-hover:opacity-100 max-lg:opacity-100 mt-8 transition-all duration-300">
-            <p class="custom-font text-[22px] font-[700] text-center mb-[2px] text-[#010101]">Fried Rice</p>
-            <p class="text-[#4E4E4E] custom-font text-center">₦4,000</p>
-            <div class="flex items-center mt-2 cursor-pointer">
-            <img src="/images/add.svg" alt="Add to cart" />
-            <span class="custom-font text-[18px] text-[#B20201] font-[400] ml-2">Add to cart</span>
-            </div>
-        </div>
-        </div>
-    </a>
-
-    <a href="">
-        <div class="flex flex-col items-center group relative">
-        <img src="/images/foodDefault.png" alt="" class="group-hover:hidden max-lg:hidden" />
-        <img src="/images/foodHovered.png" alt="" class="hidden group-hover:block max-lg:block mt-8" />
-        <div class="flex flex-col items-center opacity-0 group-hover:opacity-100 max-lg:opacity-100 mt-8 transition-all duration-300">
-            <p class="custom-font text-[22px] font-[700] text-center mb-[2px] text-[#010101]">Fried Rice</p>
-            <p class="text-[#4E4E4E] custom-font text-center">₦4,000</p>
-            <div class="flex items-center mt-2 cursor-pointer">
-            <img src="/images/add.svg" alt="Add to cart" />
-            <span class="custom-font text-[18px] text-[#B20201] font-[400] ml-2">Add to cart</span>
-            </div>
-        </div>
-        </div>
-    </a>
-
-    <a href="">
-        <div class="flex flex-col items-center group relative">
-        <img src="/images/foodDefault.png" alt="" class="group-hover:hidden max-lg:hidden" />
-        <img src="/images/foodHovered.png" alt="" class="hidden group-hover:block max-lg:block mt-8" />
-        <div class="flex flex-col items-center opacity-0 group-hover:opacity-100 max-lg:opacity-100 mt-8 transition-all duration-300">
-            <p class="custom-font text-[22px] font-[700] text-center mb-[2px] text-[#010101]">Fried Rice</p>
-            <p class="text-[#4E4E4E] custom-font text-center">₦4,000</p>
-            <div class="flex items-center mt-2 cursor-pointer">
-            <img src="/images/add.svg" alt="Add to cart" />
-            <span class="custom-font text-[18px] text-[#B20201] font-[400] ml-2">Add to cart</span>
-            </div>
-        </div>
-        </div>
-    </a>
-
-    <a href="">
-        <div class="flex flex-col items-center group relative">
-        <img src="/images/foodDefault.png" alt="" class="group-hover:hidden max-lg:hidden" />
-        <img src="/images/foodHovered.png" alt="" class="hidden group-hover:block max-lg:block mt-8" />
-        <div class="flex flex-col items-center opacity-0 group-hover:opacity-100 max-lg:opacity-100 mt-8 transition-all duration-300">
-            <p class="custom-font text-[22px] font-[700] text-center mb-[2px] text-[#010101]">Fried Rice</p>
-            <p class="text-[#4E4E4E] custom-font text-center">₦4,000</p>
-            <div class="flex items-center mt-2 cursor-pointer">
-            <img src="/images/add.svg" alt="Add to cart" />
-            <span class="custom-font text-[18px] text-[#B20201] font-[400] ml-2">Add to cart</span>
-            </div>
-        </div>
-        </div>
-    </a>
-    </div>
     </section>
+</main>
 
-    <footer class="bg-[#F3F3F3]">
-        <div class="flex justify-between p-[64px] max-md:p-[32px] max-md:flex-col">
-            <nav>
-                <h2 class="custom-font font-[400] text-[#010101] text-[36px] leading-[44px] mb-[24px] max-md:text-[32px]">Think Big. Start at North Café.</h2>
-                <a href="" class="px-[24px] py-[12px] text-[16px] text-white bg-[#B20201] font-[700] w-fit">Send Resumé</a>
-            </nav>
-            <nav class="flex flex-col gap-[8px] max-md:mt-[28px]">
-                <h3 class="font-[600] text-[14px] leading-[22px] text-[#010101] custom-font uppercase ">COMPANY</h3>
-                <a href="" class="font-[400] text-[14px] leading-[22px] text-[#4E4E4E] custom-font">Menu</a>
-                <a href="" class="font-[400] text-[14px] leading-[22px] text-[#4E4E4E] custom-font">About</a>
-                <a href="" class="font-[400] text-[14px] leading-[22px] text-[#4E4E4E] custom-font">Careers</a>
-            </nav>
-            <nav class="flex flex-col gap-[8px] max-md:mt-[28px]">
-                <h3 class="font-[600] text-[14px] leading-[22px] text-[#010101] custom-font uppercase">SOCIALS</h3>
-                <a href="" class="font-[400] text-[14px] leading-[22px] text-[#4E4E4E] custom-font">LinkedIn</a>
-                <a href="" class="font-[400] text-[14px] leading-[22px] text-[#4E4E4E] custom-font">Youtube</a>
-                <a href="" class="font-[400] text-[14px] leading-[22px] text-[#4E4E4E] custom-font">Instagram</a>
-            </nav>
-        </div>
-        <div class="">
-            <p class="font-[400] text-[14px] leading-[22px] text-[#010101] custom-font p-[32px] text-center">© 2025 North Café. All rights reserved.</p>
-        </div>
-    </footer>
+<!-- Footer -->
+<footer class="bg-[#F3F3F3]">
+    <div class="flex justify-between p-[64px] max-md:p-[32px] max-md:flex-col">
+        <nav>
+            <h2 class="custom-font font-[400] text-[#010101] text-[36px] leading-[44px] mb-[24px] max-md:text-[32px]">Think Big. Start at North Café.</h2>
+            <a href="about.html#careers" class="px-[24px] py-[12px] text-[16px] text-white bg-[#B20201] font-[700] w-fit">Send Resumé</a>
+        </nav>
+        <nav class="flex flex-col gap-[8px] max-md:mt-[28px]">
+            <h3 class="font-[600] text-[14px] leading-[22px] text-[#010101] custom-font uppercase ">COMPANY</h3>
+            <a href="index.html" class="font-[400] text-[14px] leading-[22px] text-[#4E4E4E] custom-font">Menu</a>
+            <a href="about.html" class="font-[400] text-[14px] leading-[22px] text-[#4E4E4E] custom-font">About</a>
+            <a href="about.html#careers" class="font-[400] text-[14px] leading-[22px] text-[#4E4E4E] custom-font">Careers</a>
+        </nav>
+        <nav class="flex flex-col gap-[8px] max-md:mt-[28px]">
+            <h3 class="font-[600] text-[14px] leading-[22px] text-[#010101] custom-font uppercase">SOCIALS</h3>
+            <a href="https://linkedin.com" target="_blank" class="font-[400] text-[14px] leading-[22px] text-[#4E4E4E] custom-font">LinkedIn</a>
+            <a href="https://youtube.com" target="_blank" class="font-[400] text-[14px] leading-[22px] text-[#4E4E4E] custom-font">Youtube</a>
+            <a href="https://instagram.com" target="_blank" class="font-[400] text-[14px] leading-[22px] text-[#4E4E4E] custom-font">Instagram</a>
+        </nav>
+    </div>
+    <div class="">
+        <p class="font-[400] text-[14px] leading-[22px] text-[#010101] custom-font p-[32px] text-center">© 2025 North Café. All rights reserved.</p>
+    </div>
+</footer>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            } else {
-                menu.classList.add('hidden');
-                document.body.style.overflow = '';
-            }
+<!-- Scripts -->
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('mobile-menu');
+        if (menu.classList.contains('hidden')) {
+            menu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        } else {
+            menu.classList.add('hidden');
+            document.body.style.overflow = '';
         }
-    </script>
+    }
+</script>
+
+<style>
+    .active {
+        color: #010101 !important;
+        font-weight: 700 !important;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const path = window.location.pathname.split("/").pop(); // e.g. index.html or about.html
+        const navLinks = document.querySelectorAll('a[href]:not(.logo)'); // skip logo
+
+        navLinks.forEach(link => {
+            const href = link.getAttribute("href");
+            if (href === path) {
+                link.classList.add("active");
+            }
+        });
+    });
+    function toggleMobileSearch() {
+  const search = document.getElementById('mobile-search');
+  if (search.classList.contains('hidden')) {
+    search.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  } else {
+    search.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+}
+</script>
 </body>
 </html>

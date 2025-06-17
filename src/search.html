@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search - North Cafe</title>
+  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .search-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: flex;
+      align-items: center;
+      padding: 24px 16px 16px 16px;
+      transition: transform 0.3s;
+    }
+    .search-overlay.hidden {
+      transform: translateY(-100%);
+    }
+    .search-input {
+      border: none;
+      outline: none;
+      font-size: 20px;
+      flex: 1;
+      margin-left: 12px;
+      background: transparent;
+      color: #222;
+    }
+    .search-cancel {
+      color: #888;
+      font-size: 18px;
+      margin-left: 16px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="bg-white">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white px-[24px] py-[20px] flex justify-between items-center shadow">
+    <a href="index.html" class="logo text-[#B20201] font-[700] text-[28px] leading-[36px] dancing-script">North Café</a>
+    <nav class="flex gap-6 items-center">
+      <a href="index.html" class="text-[#4E4E4E] hover:text-[#010101]">Menu</a>
+      <a href="about.html" class="text-[#4E4E4E] hover:text-[#010101]">About</a>
+      <a href="about.html#careers" class="text-[#4E4E4E] hover:text-[#010101]">Careers</a>
+      <a href="login.html" class="text-[#B20201] font-bold">Log In</a>
+      <a href="signup.html" class="px-4 py-2 text-white bg-[#B20201] font-bold rounded">Sign Up</a>
+      <button id="search-btn" class="ml-4"><i class="fas fa-search text-[#010101] text-[22px]"></i></button>
+    </nav>
+  </header>
+
+  <!-- Search Overlay -->
+  <div id="search-overlay" class="search-overlay hidden">
+    <i class="fas fa-search text-[#008060] text-[28px]"></i>
+    <input type="text" class="search-input" placeholder="Search Menu" autofocus />
+    <button class="search-cancel" id="cancel-search">Cancel</button>
+  </div>
+
+  <!-- Main Content -->
+  <main class="pt-[100px] px-4">
+    <h2 class="text-2xl font-bold mb-4">Search Results</h2>
+    <p class="text-gray-500">Your search results will appear here.</p>
+  </main>
+
+  <script>
+    const searchBtn = document.getElementById('search-btn');
+    const searchOverlay = document.getElementById('search-overlay');
+    const cancelBtn = document.getElementById('cancel-search');
+    const searchInput = searchOverlay.querySelector('.search-input');
+
+    searchBtn.addEventListener('click', () => {
+      searchOverlay.classList.remove('hidden');
+      setTimeout(() => searchInput.focus(), 100);
+    });
+    cancelBtn.addEventListener('click', () => {
+      searchOverlay.classList.add('hidden');
+      searchInput.value = '';
+    });
+    // Optional: Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (!searchOverlay.classList.contains('hidden') && e.key === 'Escape') {
+        searchOverlay.classList.add('hidden');
+        searchInput.value = '';
+      }
+    });
+  </script>
+</body>
+</html> 

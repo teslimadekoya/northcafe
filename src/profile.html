@@ -12,25 +12,39 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="min-h-screen">
-<!-- Header -->
+ <!-- Header -->
 <header class="fixed top-0 left-0 right-0 z-50 bg-white px-[64px] py-[32px] flex justify-between items-center max-md:px-[16px]">
   <nav>
-    <a href="" class="text-[#B20201] font-[700] text-[36px] leading-[44px] dancing-script max-lg:text-[24px]">North Café</a>
+    <a href="index.html" class="logo text-[#B20201] font-[700] text-[36px] leading-[44px] dancing-script max-lg:text-[24px]">
+      North Café
+    </a>
   </nav>
+
   <nav class="flex gap-[24px] items-center text-[16px] custom-font leading-[32px] max-lg:gap-[16px] max-md:hidden">
-    <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">Menu</a>
-    <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">About</a>
-    <a href="" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">Careers</a>
+    <a href="index.html" class="text-[#4E4E4E] hover:text-[#010101] custom-font">Menu</a>
+    <a href="about.html" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">About</a>
+    <a href="about.html#careers" class="text-[#4E4E4E] custom-font hover:text-[#010101] hover:font-[700]">Careers</a>
   </nav>
+
   <nav class="flex gap-[24px] items-center custom-font leading-[26px]">
+    <!-- Cart Icon (Desktop Only) -->
+    <a href="cart.html" class="hidden md:flex">
+      <i class="fas fa-shopping-cart text-[20px] text-[#010101]"></i>
+    </a>
+
+    <!-- Mobile Menu Icons -->
     <div class="md:hidden flex items-center justify-center gap-[16px]">
-      <i class="fas fa-search text-[#010101] text-[20px] flex items-center"></i>
+      <a href="cart.html" class="flex">
+        <i class="fas fa-shopping-cart text-[#010101] text-[20px]"></i>
+      </a>
       <button onclick="toggleMenu()" class="flex items-center justify-center">
         <i class="fas fa-bars text-[#010101] text-[20px] cursor-pointer"></i>
       </button>
     </div>
-    <a href="" class="text-[#B20201] text-[20px] font-[700] max-md:hidden custom-font">Log In</a>
-    <a href="" class="px-[24px] py-[12px] custom-font text-[20px] text-white bg-[#B20201] font-[700] max-md:hidden">Sign Up</a>
+
+    <!-- Login / Sign Up (Desktop Only) -->
+    <a href="login.html" class="text-[#B20201] text-[20px] font-[700] max-md:hidden custom-font">Log In</a>
+    <a href="signup.html" class="px-[24px] py-[12px] custom-font text-[20px] text-white bg-[#B20201] font-[700] max-md:hidden">Sign Up</a>
   </nav>
 </header>
 
@@ -43,11 +57,11 @@
       </button>
     </div>
     <div class="flex flex-col items-center justify-center flex-1 gap-[24px]">
-      <a href="#" class="text-[#4E4E4E] text-[20px] font-[500] hover:font-[700] hover:text-[#010101]">Menu</a>
-      <a href="#" class="text-[#4E4E4E] text-[20px] font-[500] hover:font-[700] hover:text-[#010101]">About</a>
-      <a href="#" class="text-[#4E4E4E] text-[20px] font-[500] hover:font-[700] hover:text-[#010101]">Careers</a>
-      <a href="#" class="text-[#B20201] text-[20px] font-[700] mt-[32px]">Log In</a>
-      <a href="#" class="px-[24px] py-[12px] text-[20px] text-white bg-[#B20201] font-[700] w-fit">Sign Up</a>
+      <a href="index.html" class="text-[#4E4E4E] text-[20px] font-[500] hover:font-[700] hover:text-[#010101]">Menu</a>
+      <a href="about.html" class="text-[#4E4E4E] text-[20px] font-[500] hover:font-[700] hover:text-[#010101]">About</a>
+      <a href="about.html#careers" class="text-[#4E4E4E] text-[20px] font-[500] hover:font-[700] hover:text-[#010101]">Careers</a>
+      <a href="login.html" class="text-[#B20201] text-[20px] font-[700] mt-[32px]">Log In</a>
+      <a href="signup.html" class="px-[24px] py-[12px] text-[20px] text-white bg-[#B20201] font-[700] w-fit">Sign Up</a>
     </div>
   </div>
 </div>
